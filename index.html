@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон Барс</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (бесплатная) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="#hero" class="logo">
+                    <i class="fas fa-paw"></i> Барс Авто
+                </a>
+            </div>
+            <nav class="header__nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Главная</a></li>
+                    <li><a href="#catalog" class="nav-link">Каталог</a></li>
+                    <li><a href="#services" class="nav-link">Услуги</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="#contacts" class="btn btn--primary btn--small">Связаться с нами</a>
+                <button class="burger" id="burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero секция -->
+        <section class="hero" id="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Автосалон Барс – надёжность и стиль на дорогах</h1>
+                    <p class="hero__subtitle">Продажа новых и автомобилей с пробегом, сервис и кредитование</p>
+                    <div class="hero__buttons">
+                        <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+                        <button class="btn btn--outline" id="consultBtn">Получить консультацию</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог автомобилей -->
+        <section class="catalog" id="catalog">
+            <div class="container">
+                <h2 class="section-title">Автомобили в наличии</h2>
+                <!-- Фильтры -->
+                <div class="catalog__filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="sedan">Седаны</button>
+                    <button class="filter-btn" data-filter="suv">Внедорожники</button>
+                    <button class="filter-btn" data-filter="hatchback">Хэтчбеки</button>
+                </div>
+                <!-- Сетка карточек -->
+                <div class="catalog__grid" id="catalogGrid">
+                    <!-- Карточка 1 -->
+                    <div class="car-card" data-type="sedan">
+                        <img src="https://picsum.photos/id/13/300/200" alt="Toyota Camry" class="car-card__img">
+                        <div class="car-card__body">
+                            <h3 class="car-card__title">Toyota Camry</h3>
+                            <ul class="car-card__specs">
+                                <li>2022 г.</li>
+                                <li>2.5 л</li>
+                                <li>Автомат</li>
+                            </ul>
+                            <div class="car-card__price">2 500 000 ₽</div>
+                            <button class="btn btn--secondary btn--block open-modal" data-car="camry">Подробнее</button>
+                        </div>
+                    </div>
+                    <!-- Карточка 2 -->
+                    <div class="car-card" data-type="sedan">
+                        <img src="https://picsum.photos/id/14/300/200" alt="Hyundai Solaris" class="car-card__img">
+                        <div class="car-card__body">
+                            <h3 class="car-card__title">Hyundai Solaris</h3>
+                            <ul class="car-card__specs">
+                                <li>2021 г.</li>
+                                <li>1.6 л</li>
+                                <li>Механика</li>
+                            </ul>
+                            <div class="car-card__price">1 200 000 ₽</div>
+                            <button class="btn btn--secondary btn--block open-modal" data-car="solaris">Подробнее</button>
+                        </div>
+                    </div>
+                    <!-- Карточка 3 -->
+                    <div class="car-card" data-type="suv">
+                        <img src="https://picsum.photos/id/15/300/200" alt="Kia Sportage" class="car-card__img">
+                        <div class="car-card__body">
+                            <h3 class="car-card__title">Kia Sportage</h3>
+                            <ul class="car-card__specs">
+                                <li>2023 г.</li>
+                                <li>2.0 л</li>
+                                <li>Автомат</li>
+                            </ul>
+                            <div class="car-card__price">2 800 000 ₽</div>
+                            <button class="btn btn--secondary btn--block open-modal" data-car="sportage">Подробнее</button>
+                        </div>
+                    </div>
+                    <!-- Карточка 4 -->
+                    <div class="car-card" data-type="suv">
+                        <img src="https://picsum.photos/id/16/300/200" alt="BMW X5" class="car-card__img">
+                        <div class="car-card__body">
+                            <h3 class="car-card__title">BMW X5</h3>
+                            <ul class="car-card__specs">
+                                <li>2020 г.</li>
+                                <li>3.0 л</li>
+                                <li>Автомат</li>
+                            </ul>
+                            <div class="car-card__price">4 500 000 ₽</div>
+                            <button class="btn btn--secondary btn--block open-modal" data-car="x5">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Услуги -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">Наши услуги</h2>
+                <div class="services__grid">
+                    <div class="service-card">
+                        <i class="fas fa-percent service-card__icon"></i>
+                        <h3 class="service-card__title">Кредит от 3%</h3>
+                        <p class="service-card__desc">Выгодные условия кредитования на новые и подержанные авто.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-exchange-alt service-card__icon"></i>
+                        <h3 class="service-card__title">Trade-in за 1 день</h3>
+                        <p class="service-card__desc">Быстрый обмен вашего авто на другое с доплатой.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-car service-card__icon"></i>
+                        <h3 class="service-card__title">Запись на тест-драйв</h3>
+                        <p class="service-card__desc">Попробуйте авто перед покупкой – запишитесь онлайн.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-tools service-card__icon"></i>
+                        <h3 class="service-card__title">Гарантийное обслуживание</h3>
+                        <p class="service-card__desc">Полный спектр сервисных работ и гарантия качества.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- О компании -->
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">О компании</h2>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>Автосалон «Барс» работает с 2005 года и зарекомендовал себя как надёжный партнёр. Мы предлагаем только проверенные автомобили с прозрачной историей, помогаем с оформлением кредита и страховки, а также предоставляем полное послегарантийное обслуживание.</p>
+                        <p>Наш салон – это огромный выбор автомобилей, индивидуальный подход и выгодные цены. Доверьтесь профессионалам!</p>
+                    </div>
+                    <div class="about__image">
+                        <img src="https://picsum.photos/id/104/500/400" alt="Команда автосалона Барс">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты и обратная связь -->
+        <section class="contacts" id="contacts">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contacts__wrapper">
+                    <div class="contacts__info">
+                        <h3>Свяжитесь с нами</h3>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-map-marker-alt"></i> ул. Автомобильная, д. 1, Москва</li>
+                            <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                            <li><i class="fas fa-envelope"></i> info@bars-auto.ru</li>
+                            <li><i class="fas fa-clock"></i> Пн-Вс: 9:00 - 21:00</li>
+                        </ul>
+                        <div class="contacts__map">
+                            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617634%2C55.755864&z=10&pt=37.617634,55.755864,pm2rdm" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="contacts__form">
+                        <h3>Обратная связь</h3>
+                        <form id="feedbackForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Комментарий" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--block">Отправить</button>
+                        </form>
+                        <div id="formSuccess" class="success-message" style="display: none;">Сообщение отправлено! Мы свяжемся с вами в ближайшее время.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__copy">
+                &copy; 2025 Автосалон Барс. Все права защищены.
+            </div>
+            <div class="footer__contacts">
+                <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                <a href="mailto:info@bars-auto.ru">info@bars-auto.ru</a>
+            </div>
+            <div class="footer__social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно "Получить консультацию" -->
+    <div class="modal" id="consultModal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Получить консультацию</h2>
+            <form id="consultForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно детальной информации об авто (шаблон, заполняется через JS) -->
+    <div class="modal" id="carModal">
+        <div class="modal__content modal__content--large">
+            <span class="modal__close">&times;</span>
+            <div id="carModalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
